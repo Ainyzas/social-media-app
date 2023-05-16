@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Page404() {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(3);
   const timeRef = useRef(null);
   const navigate = useNavigate();
 

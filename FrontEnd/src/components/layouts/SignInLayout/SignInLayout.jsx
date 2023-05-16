@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { signInRequest } from '../../../api-calls/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import style from './SignInLayout.module.css';
 
 export default function SignInLayout() {
   const [email, setEmail] = useState('');
@@ -21,20 +22,25 @@ export default function SignInLayout() {
   }
 
   return (
-    <>
-      <form onSubmit={submitHandler}>
+    <div className={style.wrapper}>
+      <form className={style.form} onSubmit={submitHandler}>
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} />
+        <input className={style.input} type="email" id="email" onChange={(e) => setEmail(e.target.value)} />
         <br />
         <label htmlFor="password">Password </label>
-        <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} />
+        <input className={style.input} type="password" id="password" onChange={(e) => setPassword(e.target.value)} />
         <br />
-        <button type="submit">Log In</button>
+        <button className={style.button} type="submit">
+          Log In
+        </button>
         <h3 style={{ display: isWrongCredential ? 'block' : 'none' }}>Wrong password or email</h3>
       </form>
-      <p>
-        Not Registered? <Link to="/auth/signup">Register Here</Link>
+      <p className={style.register}>
+        Not Registered?{' '}
+        <Link className={style.registerLink} to="/auth/signup">
+          Register Here
+        </Link>
       </p>
-    </>
+    </div>
   );
 }

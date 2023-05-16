@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const HOST = 'http://localhost:4000/api/auth';
+const HOST = 'https://social-media-api-ainyzas.vercel.app/api/auth';
 
 export async function signUpRequest(body) {
   try {

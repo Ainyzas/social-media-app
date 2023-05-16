@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const HOST = 'http://localhost:4000/api/posts';
+const HOST = 'https://social-media-api-ainyzas.vercel.app/api/posts';
 
 export async function createNewPost({ body, userId }) {
   try {
